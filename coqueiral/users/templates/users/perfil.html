@@ -1,0 +1,5 @@
+<!-- users/templates/users/perfil.html -->
+<h2>Perfil de {{ perfil.nome_completo }}</h2>
+<p>Email: {{ perfil.email }}</p>
+<p>Data de Nascimento: {{ perfil.data_de_nascimento }}</p>
+<a href="{% url 'editar_perfil' %}">Editar Perfil</a>
