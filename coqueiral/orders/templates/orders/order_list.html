@@ -1,0 +1,10 @@
+<h1>Orders</h1>
+<ul>
+    {% for order in orders %}
+        <li>
+            <a href="{% url 'orders:order_detail' order.id %}">
+                Order {{ order.id }} - {{ order.status }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

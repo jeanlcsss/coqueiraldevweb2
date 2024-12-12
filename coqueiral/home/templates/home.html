@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Roupas</title>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo(a) à Loja de Roupas</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'products:listar_produtos' %}">Produtos</a></li>
+            <li><a href="{% url 'orders:order_list' %}">Meus Pedidos</a></li>
+            <li><a href="{% url 'users:login' %}">Login</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>Encontre os melhores produtos com as melhores ofertas!</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 - Loja de Roupas</p>
+    </footer>
+</body>
+</html>
