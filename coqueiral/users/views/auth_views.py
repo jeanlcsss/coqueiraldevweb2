@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from ..forms import CustomUserCreationForm
+from ..models import Cliente
 
 # Login do usuário
 def user_login(request):
@@ -29,7 +30,12 @@ def register(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            user = form.save(commit=False)
+            user.is_customer = True
+            user.save()
+
+            Cliente.objects.create(user=user)
+
             login(request, user)
             return redirect('home')  # Redireciona após o registro
     else:

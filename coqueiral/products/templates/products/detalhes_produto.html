@@ -5,5 +5,5 @@
 {% if produto.imagem %}
 <img src="{{ produto.imagem.url }}" alt="Imagem do produto">
 {% endif %}
-<a href="{% url 'editar_produto' produto.id %}">Editar</a>
-<a href="{% url 'excluir_produto' produto.id %}">Excluir</a>
+<a href="{% url 'products:editar_produto' produto.id %}">Editar</a>
+<a href="{% url 'products:excluir_produto' produto.id %}">Excluir</a>

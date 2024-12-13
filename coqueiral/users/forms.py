@@ -1,12 +1,13 @@
 # users/forms.py
 from django import forms
 from .models import CustomUser, Perfil
+from django.contrib.auth.forms import UserCreationForm
 
 # Formulário para criar novo usuário (CustomUser)
-class CustomUserCreationForm(forms.ModelForm):
+class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'is_customer', 'is_staff', 'password']
+        fields = ['username', 'email', 'password']
     password = forms.CharField(widget=forms.PasswordInput)
 
 # Formulário para editar perfil do usuário
