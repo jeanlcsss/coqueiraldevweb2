@@ -1,11 +1,10 @@
 <h1>Pedido {{ order.id }}</h1>
 <p>Status: {{ order.status }}</p>
-<p>Items:</p>
-<ul>
-    {% for item in order.items.all %}
-        <li>{{ item.product.name }} x{{ item.quantity }}</li>
-    {% endfor %}
-</ul>
+{% for item in order.items.all %}
+    <p>Produto: {{ item.product.nome }}</p>
+    <p>Quantidade: {{ item.quantity }}</p>
+{% endfor %}
+<a href="">Finalizar Pedido</a>
 <a href="{% url 'orders:add_order_item' order.id %}">Adicionar Produto ao Pedido</a>
 <a href="{% url 'orders:cancel_order' order.id %}">Cancelar Pedido</a>
 <a href="{% url 'orders:order_list' %}">Voltar</a>
