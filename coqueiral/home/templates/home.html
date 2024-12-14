@@ -7,14 +7,25 @@
 </head>
 <body>
     <header>
-        <h1>Bem-vindo(a) à Coqueiral</h1>
+        <h1>
+            {% if user.is_authenticated %}
+                Olá, {{ user.username }}! Bem-vindo à Coqueiral!
+            {% else %}
+                Bem vindo à Coqueiral, inicie sessão ou cadastre-se para aproveitar ofertas exclusivas.
+            {% endif %}
+        </h1>
     </header>
     <nav>
         <ul>
+            {% if user.is_authenticated %}
             <li><a href="{% url 'products:listar_produtos' %}">Produtos</a></li>
             <li><a href="{% url 'orders:order_list' %}">Meus Pedidos</a></li>
-            <li><a href="{% url 'users:login' %}">Login</a></li>
+            <li><a href="{% url 'users:logout' %}">Sair</a></li>
+            {% else %}
+            <li><a href="{% url 'products:listar_produtos' %}">Produtos</a></li>
+            <li><a href="{% url 'users:login' %}">Iniciar Sessão</a></li>
             <li><a href="{% url 'users:register' %}">Cadastro</a></li>
+            {% endif %}
         </ul>
     </nav>
     <main>

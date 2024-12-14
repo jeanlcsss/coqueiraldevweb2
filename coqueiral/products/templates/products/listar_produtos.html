@@ -2,8 +2,11 @@
 <ul>
   {% for produto in produtos %}
   <li>
-    <a href="{{ produto.id }}">{{ produto.nome }} - R$ {{ produto.preco }}</a>
+    <a href="{% url 'products:detalhes_produto' produto.id %}">{{ produto.nome }} - R$ {{ produto.preco }}</a>
   </li>
   {% endfor %}
 </ul>
+{% if user.is_authenticated and user.is_staff %}
 <a href="{% url 'products:criar_produto' %}">Adicionar Produto</a>
+{% endif %}
+<a href="{% url 'home' %}">Voltar</a>

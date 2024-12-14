@@ -3,5 +3,5 @@
 <form method="post">
   {% csrf_token %}
   <button type="submit">Sim</button>
-  <a href="{% url 'listar_produtos' %}">Não</a>
+  <a href="{% url 'products:listar_produtos' %}">Não</a>
 </form>

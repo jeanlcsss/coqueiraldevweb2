@@ -19,7 +19,7 @@ def criar_produto(request):
         form = ProdutoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('listar_produtos')
+            return redirect('products:listar_produtos')
     else:
         form = ProdutoForm()
     return render(request, 'products/criar_editar_produto.html', {'form': form})
@@ -31,7 +31,7 @@ def editar_produto(request, produto_id):
         form = ProdutoForm(request.POST, request.FILES, instance=produto)
         if form.is_valid():
             form.save()
-            return redirect('listar_produtos')
+            return redirect('products:listar_produtos')
     else:
         form = ProdutoForm(instance=produto)
     return render(request, 'products/criar_editar_produto.html', {'form': form})
@@ -41,5 +41,5 @@ def excluir_produto(request, produto_id):
     produto = get_object_or_404(Produto, id=produto_id)
     if request.method == 'POST':
         produto.delete()
-        return redirect('listar_produtos')
+        return redirect('products:listar_produtos')
     return render(request, 'products/excluir_produto.html', {'produto': produto})
