@@ -15,7 +15,7 @@ class Order(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"Order {self.id} - {self.user.username} - {self.status}"
+        return f"Pedido {self.id} - {self.user.username} - {self.status}"
 
 
 class OrderItem(models.Model):

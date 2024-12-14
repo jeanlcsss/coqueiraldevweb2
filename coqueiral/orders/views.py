@@ -28,6 +28,12 @@ def create_order(request):
     return render(request, 'orders/order_form.html', {'form': form})
 
 @login_required
+def cancel_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id, user=request.user)
+    order.delete()
+    return redirect('orders:order_list')
+
+@login_required
 def add_order_item(request, order_id):
     order = get_object_or_404(Order, id=order_id, user=request.user)
     if request.method == 'POST':

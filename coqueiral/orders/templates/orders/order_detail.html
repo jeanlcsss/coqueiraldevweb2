@@ -1,4 +1,4 @@
-<h1>Order {{ order.id }}</h1>
+<h1>Pedido {{ order.id }}</h1>
 <p>Status: {{ order.status }}</p>
 <p>Items:</p>
 <ul>
@@ -6,4 +6,6 @@
         <li>{{ item.product.name }} x{{ item.quantity }}</li>
     {% endfor %}
 </ul>
-<a href="{% url 'orders:add_order_item' order.id %}">Add Item</a>
+<a href="{% url 'orders:add_order_item' order.id %}">Adicionar Produto ao Pedido</a>
+<a href="{% url 'orders:cancel_order' order.id %}">Cancelar Pedido</a>
+<a href="{% url 'orders:order_list' %}">Voltar</a>

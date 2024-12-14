@@ -1,10 +1,14 @@
-<h1>Orders</h1>
+<h1>Pedidos</h1>
 <ul>
     {% for order in orders %}
         <li>
             <a href="{% url 'orders:order_detail' order.id %}">
-                Order {{ order.id }} - {{ order.status }}
+                Pedido {{ order.id }} - {{ order.status }}
             </a>
         </li>
     {% endfor %}
+    {% if user.is_authenticated %}
+    <a href="{% url 'orders:create_order' %}">Fazer Pedido</a>
+    {% endif %}
+    <a href="{% url 'home' %}">Voltar</a>
 </ul>
