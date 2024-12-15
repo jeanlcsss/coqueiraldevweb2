@@ -7,8 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ['username', 'email', 'password']
-    password = forms.CharField(widget=forms.PasswordInput)
+        fields = ['username', 'email',]
 
 # Formulário para editar perfil do usuário
 class PerfilForm(forms.ModelForm):

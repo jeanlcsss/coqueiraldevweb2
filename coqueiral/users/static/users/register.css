@@ -1,0 +1,104 @@
+/* Estilo global */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Caixa de registro */
+.register-container {
+    background-color: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Título */
+.register-container h1 {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Campos do formulário */
+form p {
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="email"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Botão de registro */
+form button {
+    display: inline-block;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #66BB6A;
+    transform: translateY(-2px);
+}
+
+form button:active {
+    background-color: #388E3C;
+    transform: translateY(1px);
+}
+
+/* Link para login */
+.login-link {
+    margin-top: 1.5rem;
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-link:hover {
+    color: #388E3C;
+}

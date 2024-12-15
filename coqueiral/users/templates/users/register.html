@@ -1,6 +1,21 @@
-<!-- users/templates/users/register.html -->
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Registrar</button>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+    <link rel="stylesheet" href="{% static 'users/register.css' %}">
+</head>
+<body>
+    <div class="register-container">
+        <h1>Registrar</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Registrar</button>
+        </form>
+        <a href="{% url 'users:login' %}" class="login-link">Já tem uma conta? Faça login</a>
+    </div>
+</body>
+</html>
