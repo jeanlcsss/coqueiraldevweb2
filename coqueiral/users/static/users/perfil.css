@@ -1,0 +1,94 @@
+/* Estilo global */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container principal */
+.perfil-container {
+    background-color: white;
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Título */
+.perfil-container h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Detalhes do perfil */
+.perfil-detalhes {
+    text-align: left;
+    margin: 1rem 0;
+}
+
+.perfil-detalhes p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.perfil-detalhes p strong {
+    color: #333;
+}
+
+/* Botão Editar */
+.btn-editar {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-editar:hover {
+    background-color: #66BB6A;
+    transform: translateY(-3px);
+}
+
+.btn-editar:active {
+    background-color: #388E3C;
+    transform: translateY(1px);
+}
+
+.btn-voltar {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #66BB6A;
+    transform: translateY(-3px);
+}
+
+.btn-voltar:active {
+    background-color: #388E3C;
+    transform: translateY(1px);
+}

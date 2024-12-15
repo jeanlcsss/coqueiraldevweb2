@@ -10,10 +10,12 @@
 <body>
     <header>
         <h1>
-            {% if user.is_authenticated %}
-                Olá, {{ user.username }}! Bem-vindo à Coqueiral!
+            {% if user.is_authenticated and user.perfil %}
+                Olá, {{ user.perfil.nome_completo }}! Bem-vindo à Coqueiral!    
+            {% elif user.is_authenticated %}
+                Olá, Bem-vindo à Coqueiral! Acesse a aba Perfil para alterar seus dados!
             {% else %}
-                Bem vindo à Coqueiral! inicie sessão ou cadastre-se para aproveitar ofertas exclusivas.
+                Bem vindo à Coqueiral! Inicie sessão ou cadastre-se para aproveitar ofertas exclusivas.
             {% endif %}
         </h1>
     </header>
@@ -22,6 +24,7 @@
             {% if user.is_authenticated %}
             <li><a href="{% url 'products:listar_produtos' %}">Produtos</a></li>
             <li><a href="{% url 'orders:order_list' %}">Meus Pedidos</a></li>
+            <li><a href="{% url 'users:perfil' %}">Perfil</a></li>
             <li><a href="{% url 'users:logout' %}">Sair</a></li>
             {% else %}
             <li><a href="{% url 'products:listar_produtos' %}">Produtos</a></li>

@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.conf import settings
 
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
@@ -10,7 +11,11 @@ class CustomUser(AbstractUser):
         return self.username
 
 class Perfil(models.Model):
-    user = models.OneToOneField('CustomUser', on_delete=models.CASCADE, related_name='perfil')
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,  # Aponta para o modelo CustomUser
+        on_delete=models.CASCADE,
+        related_name='perfil'
+    )
     nome_completo = models.CharField(max_length=255)
     email = models.TextField(blank=False, null=False)
     data_de_nascimento = models.DateField(blank=False, null=False)

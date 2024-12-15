@@ -1,5 +1,21 @@
-<!-- users/templates/users/perfil.html -->
-<h2>Perfil de {{ perfil.nome_completo }}</h2>
-<p>Email: {{ perfil.email }}</p>
-<p>Data de Nascimento: {{ perfil.data_de_nascimento }}</p>
-<a href="{% url 'editar_perfil' %}">Editar Perfil</a>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="{% static 'users/perfil.css' %}">
+</head>
+<body>
+    <div class="perfil-container">
+        <h2>Perfil de {{ perfil.nome_completo }}</h2>
+        <div class="perfil-detalhes">
+            <p><strong>Email:</strong> {{ perfil.email }}</p>
+            <p><strong>Data de Nascimento:</strong> {{ perfil.data_de_nascimento }}</p>
+        </div>
+        <a href="{% url 'users:editar_perfil' %}" class="btn-editar">Editar Perfil</a>
+        <a href="{% url 'home' %}" class="btn-voltar">Voltar</a>
+    </div>
+</body>
+</html>
