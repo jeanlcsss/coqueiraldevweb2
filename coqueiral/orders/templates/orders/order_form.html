@@ -1,3 +1,12 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="{% static 'orders/order_form.css' %}">
+</head>
 <h1>Criar Pedido</h1>
 <form method="post">
     {% csrf_token %}

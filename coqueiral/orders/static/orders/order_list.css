@@ -1,0 +1,86 @@
+/* Estilo global */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* Cabeçalho */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-top: 2rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Lista de pedidos */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+ul li {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+/* Links dos pedidos */
+ul li a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+ul li a:hover {
+    color: #388E3C;
+    transform: translateX(5px);
+}
+
+/* Botões para ações */
+ul a.button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem 0.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+}
+
+ul a.button:hover {
+    background-color: #66BB6A;
+    transform: translateY(-3px);
+}
+
+ul a.button:active {
+    background-color: #388E3C;
+    transform: translateY(1px);
+}
+
+/* Centralizar botões adicionais */
+ul .actions {
+    text-align: center;
+    padding: 1rem 0;
+}
