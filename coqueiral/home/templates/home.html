@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coqueiral</title>
+    <link rel="stylesheet" href="{% static 'home/home.css' %}">
 </head>
 <body>
     <header>
@@ -11,7 +13,7 @@
             {% if user.is_authenticated %}
                 Olá, {{ user.username }}! Bem-vindo à Coqueiral!
             {% else %}
-                Bem vindo à Coqueiral, inicie sessão ou cadastre-se para aproveitar ofertas exclusivas.
+                Bem vindo à Coqueiral! inicie sessão ou cadastre-se para aproveitar ofertas exclusivas.
             {% endif %}
         </h1>
     </header>
@@ -24,7 +26,7 @@
             {% else %}
             <li><a href="{% url 'products:listar_produtos' %}">Produtos</a></li>
             <li><a href="{% url 'users:login' %}">Iniciar Sessão</a></li>
-            <li><a href="{% url 'users:register' %}">Cadastro</a></li>
+            <li><a href="{% url 'users:register' %}">Registrar-se</a></li>
             {% endif %}
         </ul>
     </nav>
