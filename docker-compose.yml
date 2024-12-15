@@ -7,6 +7,8 @@ services:
       - db
     volumes:
       - .:/app
+      - ./static:/app/staticfiles
+      - ./media:/app/coqueiral/produtos
     command: gunicorn --bind 0.0.0.0:8000 coqueiral.wsgi:application
 
   db:
