@@ -1,0 +1,81 @@
+/* Estilo global */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* Cabeçalho */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #E57373;
+    margin: 2rem 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto de confirmação */
+p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1rem auto;
+    color: #555;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+/* Formulário */
+form {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+form button {
+    background-color: #E57373;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #EF5350;
+    transform: translateY(-3px);
+}
+
+form button:active {
+    background-color: #D32F2F;
+    transform: translateY(1px);
+}
+
+/* Link "Não" */
+form a {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form a:hover {
+    background-color: #66BB6A;
+    transform: translateY(-3px);
+}
+
+form a:active {
+    background-color: #388E3C;
+    transform: translateY(1px);
+}

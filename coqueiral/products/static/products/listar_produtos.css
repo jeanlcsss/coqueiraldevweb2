@@ -1,0 +1,90 @@
+/* Estilo global */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* Cabeçalho */
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #4CAF50;
+    margin: 2rem 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Grade de produtos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 0 auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Card de produto */
+.product-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem do produto */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Nome e preço */
+.product-card h3 {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.product-card p {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* Links e botões */
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem 0;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    background-color: #66BB6A;
+    transform: translateY(-3px);
+}
+
+/* Botões na parte inferior */
+.actions {
+    text-align: center;
+    margin: 2rem auto;
+}

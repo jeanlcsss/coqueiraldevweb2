@@ -1,7 +1,19 @@
-<h1>{% if form.instance.id %}Editar{% else %}Criar{% endif %} Produto</h1>
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Salvar</button>
-</form>
-<a href="{% url 'products:listar_produtos' %}">Cancelar</a>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar/Editar Produto</title>
+    <link rel="stylesheet" href="{% static 'products/criar_editar_produto.css' %}">
+</head>
+<body>
+  <h1>{% if form.instance.id %}Editar{% else %}Criar{% endif %} Produto</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salvar</button>
+  </form>
+  <a href="{% url 'products:listar_produtos' %}">Cancelar</a>
+</body>
+</html>

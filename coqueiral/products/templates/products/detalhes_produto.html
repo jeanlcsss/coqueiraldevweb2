@@ -1,17 +1,31 @@
-<h1>{{ produto.nome }}</h1>
-<p>{{ produto.descricao }}</p>
-<p>Preço: R$ {{ produto.preco }}</p>
-<p>Estoque: {{ produto.estoque }}</p>
-{% if produto.imagem %}
-<img src="{{ produto.imagem.url }}" alt="Imagem do produto">
-{% endif %}
-{% if user.is_authenticated and user.is_staff %}
-<a href="{% url 'products:editar_produto' produto.id %}">Editar Produto</a>
-<a href="{% url 'products:excluir_produto' produto.id %}">Excluir Produto</a>
-<a href="{% url 'products:listar_produtos' %}">Voltar</a>
-{% elif user.is_authenticated and not user.is_staff %}
-<a href="{% url 'orders:create_order' %}">Comprar</a>
-<a href="{% url 'products:listar_produtos' %}">Voltar</a>
-{% else %}
-<a href="{% url 'products:listar_produtos' %}">Voltar</a>
-{% endif %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="{% static 'products/detalhes_produto.css' %}">
+</head>
+<body>
+    <div class="product-details">
+        <h1>{{ produto.nome }}</h1>
+        <p>{{ produto.descricao }}</p>
+        <p>Preço: R$ {{ produto.preco }}</p>
+        <p>Estoque: {{ produto.estoque }}</p>
+        {% if produto.imagem %}
+        <img src="{{ produto.imagem.url }}" alt="Imagem do produto">
+        {% endif %}
+        {% if user.is_authenticated and user.is_staff %}
+        <a href="{% url 'products:editar_produto' produto.id %}">Editar Produto</a>
+        <a href="{% url 'products:excluir_produto' produto.id %}" class="excluir">Excluir Produto</a>
+        <a href="{% url 'products:listar_produtos' %}">Voltar</a>
+        {% elif user.is_authenticated and not user.is_staff %}
+        <a href="{% url 'orders:create_order' %}">Comprar</a>
+        <a href="{% url 'products:listar_produtos' %}">Voltar</a>
+        {% else %}
+        <a href="{% url 'products:listar_produtos' %}">Voltar</a>
+        {% endif %}
+    </div>
+</body>
+</html>

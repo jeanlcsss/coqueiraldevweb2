@@ -1,7 +1,19 @@
-<h1>Excluir Produto</h1>
-<p>Tem certeza que deseja excluir o produto "{{ produto.nome }}"?</p>
-<form method="post">
-  {% csrf_token %}
-  <button type="submit">Sim</button>
-  <a href="{% url 'products:listar_produtos' %}">Não</a>
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Produto</title>
+    <link rel="stylesheet" href="{% static 'products/excluir_produto.css' %}">
+</head>
+<body>
+    <h1>Excluir Produto</h1>
+    <p>Tem certeza que deseja excluir o produto <strong>"{{ produto.nome }}"</strong>?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Sim</button>
+        <a href="{% url 'products:listar_produtos' %}">Não</a>
+    </form>
+</body>
+</html>

@@ -1,12 +1,33 @@
-<h1>Lista de Produtos</h1>
-<ul>
-  {% for produto in produtos %}
-  <li>
-    <a href="{% url 'products:detalhes_produto' produto.id %}">{{ produto.nome }} - R$ {{ produto.preco }}</a>
-  </li>
-  {% endfor %}
-</ul>
-{% if user.is_authenticated and user.is_staff %}
-<a href="{% url 'products:criar_produto' %}">Adicionar Produto</a>
-{% endif %}
-<a href="{% url 'home' %}">Voltar</a>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <link rel="stylesheet" href="{% static 'products/listar_produtos.css' %}">
+</head>
+<body>
+    <h1>Lista de Produtos</h1>
+    <div class="products-grid">
+      {% for produto in produtos %}
+      <div class="product-card">
+          {% if produto.imagem %}
+          <img src="{{ produto.imagem.url }}" alt="Imagem do produto {{ produto.nome }}">
+          {% else %}
+          <img src="{% static 'images/placeholder.png' %}" alt="Imagem não disponível">
+          {% endif %}
+          <h3>{{ produto.nome }}</h3>
+          <p>R$ {{ produto.preco }}</p>
+          <a href="{% url 'products:detalhes_produto' produto.id %}">Ver Detalhes</a>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="actions">
+        {% if user.is_authenticated and user.is_staff %}
+        <a href="{% url 'products:criar_produto' %}" class="button">Adicionar Produto</a>
+        {% endif %}
+        <a href="{% url 'home' %}" class="button">Voltar</a>
+    </div>
+</body>
+</html>
