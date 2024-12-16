@@ -1,0 +1,4 @@
+FastAPI
+redis-om
+uvicorn
+psycopg2-binary
